@@ -27,12 +27,12 @@ public class TasksNotCompleted {
     }
 
     public static void printTasks(int id) {
-        List<String> collect = getTasks(id).stream()
-                .map(it -> it.getTitle() + "\n not completed:" + it.isCompleted())
+        List<Boolean> collect = getTasks(id).stream()
+                .map(it -> it.isCompleted())
                 .collect(Collectors.toList());
-        for (String s : collect) {
-            if (s.contains("false")) {
-                System.out.println(s);
+        for (Boolean s : collect) {
+            if (!s) {
+                System.out.println("Completed:" + " " + s);
             }
         }
     }

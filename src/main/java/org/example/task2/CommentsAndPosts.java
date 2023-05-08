@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 
 public class CommentsAndPosts {
-    public static ArrayList<Post> getUsers(int id) {
+    public static ArrayList<Post> getPosts(int id) {
         String url = "https://jsonplaceholder.typicode.com/users/" + id + "/posts";
         ArrayList<Post> list;
         try {
@@ -30,7 +30,7 @@ public class CommentsAndPosts {
     }
 
     public static ArrayList<Comments> getComments(int id) {
-        String url = "https://jsonplaceholder.typicode.com/posts/" + id + "/comments";
+        String url = "https://jsonplaceholder.typicode.com/posts/" + getPosts(id).get(getPosts(id).size() - 1).getId() + "/comments";
         ArrayList<Comments> list;
         try {
             String text = Jsoup.connect(url)
@@ -49,7 +49,7 @@ public class CommentsAndPosts {
 
     public static void getPostsAndComments(int id) {
         System.out.println(getComments(id));
-        Post post = getUsers(id).get(getUsers(id).size() - 1);
+        Post post = getPosts(id).get(getPosts(id).size() - 1);
         String file = "user-" + id + "-post-" + post.getId() + "-comments.json";
 
         try (FileWriter fileWriter = new FileWriter(new File(file))) {
@@ -61,6 +61,5 @@ public class CommentsAndPosts {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        getComments(id);
     }
 }

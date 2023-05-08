@@ -8,7 +8,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class PutUserId {
-    public static void sendPutUser(URI uri, GsonFromPage user) {
+    public static void sendPutUser(URI uri, User user) {
         String s = Constants.GSON.toJson(user);
         System.out.println(s);
         HttpRequest build = HttpRequest.newBuilder()

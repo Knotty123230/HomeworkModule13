@@ -19,7 +19,7 @@ public class GetInformationForAllUsers {
                 .build();
         try {
             HttpResponse<String> send = Constants.HTTP_CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
-            ArrayList<GsonFromPage> list = GSON.fromJson(send.body(), new TypeToken<ArrayList<GsonFromPage>>() {
+            ArrayList<User> list = GSON.fromJson(send.body(), new TypeToken<ArrayList<User>>() {
             }.getType());
             try (FileWriter mfr = new FileWriter("allUsers.json")) {
                 String allUsers = GSON.newBuilder().setPrettyPrinting().create().toJson(list);

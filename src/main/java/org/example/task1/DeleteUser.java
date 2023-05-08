@@ -8,7 +8,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class DeleteUser {
-    public static void delete(GsonFromPage user, URI uri) throws IOException, InterruptedException {
+    public static void delete(User user, URI uri) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(uri)
                 .DELETE()

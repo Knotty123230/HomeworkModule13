@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 public class PostRealisation {
 
 
-    public static void sendPost(GsonFromPage user) throws IOException, InterruptedException {
+    public static void sendPost(User user) throws IOException, InterruptedException {
 
         String s = Constants.GSON.toJson(user);
 
@@ -34,7 +34,7 @@ public class PostRealisation {
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
-        GsonFromPage user = new GsonFromPage();
+        User user = new User();
         user.setId(12);
         sendPost(user);
     }

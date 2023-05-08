@@ -10,7 +10,7 @@ import java.net.URI;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
-        GsonFromPage user = new GsonFromPage();
+        User user = new User();
         int id = 1;
         user.setId(1);
         String url = Constants.URI + "/" + id;
@@ -20,8 +20,8 @@ public class Main {
 //        GetInformationForAllUsers.get(URI.create(Constants.URI));
 //        GetInformationById.getById(3);
 //          GetIngormationByUsername.getByUserName("Karianne");
-//        CommentsAndPosts.getPostsAndComments(1);
-        TasksNotCompleted.printTasks(4);
+        CommentsAndPosts.getPostsAndComments(1);
+//        TasksNotCompleted.printTasks(4);
     }
 
 
