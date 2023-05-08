@@ -20,8 +20,8 @@ public class Main {
 //        GetInformationForAllUsers.get(URI.create(Constants.URI));
 //        GetInformationById.getById(3);
 //          GetIngormationByUsername.getByUserName("Karianne");
-        CommentsAndPosts.getPostsAndComments(1);
-//        TasksNotCompleted.printTasks(4);
+//        CommentsAndPosts.getPostsAndComments(1);
+        TasksNotCompleted.printTasks(4);
     }
 
 

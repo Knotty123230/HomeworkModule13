@@ -27,13 +27,10 @@ public class TasksNotCompleted {
     }
 
     public static void printTasks(int id) {
-        List<Boolean> collect = getTasks(id).stream()
-                .map(it -> it.isCompleted())
-                .collect(Collectors.toList());
-        for (Boolean s : collect) {
-            if (!s) {
-                System.out.println("Completed:" + " " + s);
-            }
+        for (UserTasks task : getTasks(id)) {
+            if (!task.isCompleted()){
+                System.out.println(task.getTitle() + " \n" + "Not completed:" + task.isCompleted());
+        }
         }
     }
 }
